@@ -25,6 +25,7 @@ function CatDetailsPage() {
         fetchCat();
     }, []);
 
+    // will be undefined, so we use Conditional (ternary)
     return cat ? (
         <div>
             {" "}
