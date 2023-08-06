@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
+import AllHomesPage from './pages/AllHomesPage'
+import HomeDetailsPage from './pages/HomeDetailsPage'
+import NewHomePage from './pages/NewHomePage'
+import UpdateHomePage from './pages/UpdateHomePage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <nav>
+        <ul>
+          <li>
+            <Link to='/homes'>Shelters</Link>
+          </li>
+          <li>
+            <Link to='/homes/new'>New Shelter</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path='/homes' element={<AllHomesPage />} />
+        <Route path='/homes/new' element={<NewHomePage />} />
+        <Route path='/homes/:id' element={<HomeDetailsPage />} />
+        <Route path='/homes/:id/edit' element={<UpdateHomePage />} />
+      </Routes>
     </>
   )
 }
 
-export default App
+export default App;
