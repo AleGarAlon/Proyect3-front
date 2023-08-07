@@ -8,6 +8,7 @@ import HomeDetailsPage from './pages/HomeDetailsPage'
 import NewHomePage from './pages/NewHomePage'
 import UpdateHomePage from './pages/UpdateHomePage'
 import IsPrivate from "./components/IsPrivate";
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/homes' element={
+        <Route path='/profile' element={
         <IsPrivate>
         <Profile />
         </IsPrivate>
