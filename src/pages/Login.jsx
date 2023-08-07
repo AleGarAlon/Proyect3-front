@@ -21,7 +21,7 @@ function Login() {
       localStorage.setItem("authToken", data.token);
       //Make sure you await the authenticate User as it takes time and you cant access the private route until its finished
       await authenticateUser();
-      nav("/students");
+      nav("/profile");
     } catch (err) {
       console.log(err);
       setErrorMessage(err.response.data.errorMessage);
