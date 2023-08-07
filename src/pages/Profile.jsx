@@ -15,6 +15,7 @@ return (
 
     <img src={user.image} alt="profile image" />
     <h2>{user.name}'s profile page</h2>
+    <Link ><button>Edit your profile</button> </Link>
 
     {user.cat.length > 0 ? (
       <div>
@@ -23,7 +24,7 @@ return (
           {user.cat.map((c) => (
             <>
             <ul key={c._id}>
-            <Link to="='/cats/"{...c._id}>
+            <Link to="/cats/"{...c._id}>
             <li >{c.name}</li>
             <li>{c.photo}</li>
             </Link>
@@ -57,10 +58,6 @@ return (
             <p></p>
         )}
     <Link to="/homes/new"><button>Add a new home</button> </Link>  
-
-
-
-
 
     </>
 )

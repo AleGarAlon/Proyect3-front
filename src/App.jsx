@@ -10,7 +10,7 @@ import HomeDetailsPage from './pages/HomeDetailsPage'
 import NewHomePage from './pages/NewHomePage'
 import UpdateHomePage from './pages/UpdateHomePage'
 import IsPrivate from "./components/IsPrivate";
-import Profile from './pages/Profile';
+
 
 
 function App() {
