@@ -6,7 +6,7 @@ const AllCatsPage = () => {
 
     const fetchCats = async () => {
         try {
-            const response = await fetch("http://localhost:5005/api/cats");
+            const response = await fetch("http://localhost:3000/cats");
             if (response.status === 200) {
                 const parsedCats = await response.json();
                 setCats(parsedCats);
@@ -26,7 +26,15 @@ const AllCatsPage = () => {
             {" "}
             <h1> All Cats </h1>
             {cats.map((cat) => (
-                <h3 key={cat._id}> {cat.name}</h3>
+                <div key={cat._id}>
+                    <img
+                        src={cat.imageUrl}
+                        alt={cat.name}
+                        style={{ height: "200px" }}
+                    />
+                    <h3> {cat.name}</h3>
+                    <p>{cat.description}</p>
+                </div>
             ))}
         </div>
     );
