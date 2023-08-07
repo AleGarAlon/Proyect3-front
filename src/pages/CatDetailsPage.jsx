@@ -9,9 +9,7 @@ function CatDetailsPage() {
 
     const fetchCat = async () => {
         try {
-            const response = await fetch(
-                `http://localhost:5005/api/cats/${id}`
-            );
+            const response = await fetch(`http://localhost:3000/cats/${id}`);
             if (response.status === 200) {
                 const parsedCat = await response.json();
                 setCat(parsedCat);
@@ -31,7 +29,7 @@ function CatDetailsPage() {
             {" "}
             <h1>Cat Details </h1>
             <h3> {cat.name}</h3>
-            <button> Adopt </button>
+            <button> Adopt me </button>
         </div>
     ) : (
         <h1> Loading </h1>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllCatsPage = () => {
     //store data
@@ -32,7 +33,11 @@ const AllCatsPage = () => {
                         alt={cat.name}
                         style={{ height: "200px" }}
                     />
-                    <h3> {cat.name}</h3>
+                    <Link to={`/cats/${cat._id}`}>
+                        {" "}
+                        <h3> {cat.name}</h3>
+                    </Link>
+
                     <p>{cat.description}</p>
                 </div>
             ))}
