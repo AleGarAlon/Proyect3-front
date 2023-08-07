@@ -45,7 +45,7 @@ function CatDetailsPage() {
             <h1>Cat Details </h1>
             <h3> {cat.name}</h3>
             <button> Adopt me </button>
-            <button onClick={() => navigate(`/cata/${id}/update`)}>
+            <button onClick={() => navigate(`/cats/${id}/update`)}>
                 Update
             </button>
             <button onClick={handleDelete}>Delete</button>

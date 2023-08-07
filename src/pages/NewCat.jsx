@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewCat() {
+    const navigate = useNavigate();
+
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
     const [gender, setGender] = useState("");
@@ -21,8 +24,8 @@ function NewCat() {
             if (response.status === 200) {
                 const parsed = await response.json();
                 console.log(parsed);
-                // Logic to navigate to the new cat
-                // navigate(`/cats/${parsed._id}`)
+                // Logic to navigate to the list of cats
+                navigate(`/cats/${id}`);
                 // Logic to empty your state to have a clean form
                 setName("");
                 setAge(0);

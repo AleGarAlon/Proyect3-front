@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function UpdateCatPage() {
@@ -23,7 +23,7 @@ function UpdateCatPage() {
     };
 
     useEffect(() => {
-        fetchCharacter();
+        fetchCat();
     }, []);
 
     const handleSubmit = async (event) => {
