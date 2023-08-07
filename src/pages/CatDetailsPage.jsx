@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function CatDetailsPage() {
     //destructure id
     const { id } = useParams();
+
+    const navigate = useNavigate();
     // store data
     const [cat, setCat] = useState();
 
@@ -23,6 +25,19 @@ function CatDetailsPage() {
         fetchCat();
     }, []);
 
+    const handleDelete = async () => {
+        try {
+            const response = await fetch(`http://localhost:3000/cats/${id}`, {
+                method: "DELETE",
+            });
+            if (response.status === 202) {
+                navigate("/cats");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     // will be undefined, so we use Conditional (ternary)
     return cat ? (
         <div>
@@ -30,6 +45,10 @@ function CatDetailsPage() {
             <h1>Cat Details </h1>
             <h3> {cat.name}</h3>
             <button> Adopt me </button>
+            <button onClick={() => navigate(`/cata/${id}/update`)}>
+                Update
+            </button>
+            <button onClick={handleDelete}>Delete</button>
         </div>
     ) : (
         <h1> Loading </h1>
