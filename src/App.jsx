@@ -10,7 +10,12 @@ import HomeDetailsPage from "./pages/HomeDetailsPage";
 import NewHomePage from "./pages/NewHomePage";
 import UpdateHomePage from "./pages/UpdateHomePage";
 import IsPrivate from "./components/IsPrivate";
-import UpdateProfile from "./pages/UpdateProfile";
+// import UpdateProfile from "./pages/UpdateProfile";
+import AllCatsPage from "./pages/AllCatsPage";
+import CatDetailsPage from "./pages/CatDetailsPage";
+import NewCat from "./pages/NewCat";
+import UpdateCatPage from "./pages/UpdateCatPage ";
+
 function App() {
     return (
         <div className="App">
@@ -27,14 +32,14 @@ function App() {
                         </IsPrivate>
                     }
                 />
-                <Route
+                {/* <Route
                     path="/profile/:id/update"
                     element={
                         <IsPrivate>
                             <UpdateProfile />
                         </IsPrivate>
                     }
-                />
+                /> */}
                 <Route path="/homes" element={<AllHomesPage />} />
                 <Route
                     path="/homes/new"
