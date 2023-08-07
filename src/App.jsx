@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 //import HomePage from "./pages/HomePage";
+import Navbar from './components/Navbar';
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import AllHomesPage from './pages/AllHomesPage'
@@ -12,7 +13,8 @@ import UpdateHomePage from './pages/UpdateHomePage'
 function App() {
 
   return (
-    <>
+    <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
@@ -22,7 +24,7 @@ function App() {
         <Route path='/homes/:id/edit' element={<UpdateHomePage />} />        
         <Route path="*" element={<h1>404 page</h1>} />
       </Routes>
-    </>
+    </div>
   );
 }
 
