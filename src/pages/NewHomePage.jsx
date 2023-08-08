@@ -8,7 +8,7 @@ const NewHomePage = () => {
 
     const authContext = useContext(AuthContext); // Use the AuthContext
 
-    const userId = authContext.user._id; // Assuming user contains the user's information
+    const userId = authContext.user._id;
 
 
     const handleSubmit = async payload => {
@@ -16,7 +16,7 @@ const NewHomePage = () => {
 
             // Include the user's ID in the payload
             payload.Owner = userId;
-            
+
             const response = await fetch('http://localhost:5005/api/homes/', {
                 method: 'POST',
                 headers: {

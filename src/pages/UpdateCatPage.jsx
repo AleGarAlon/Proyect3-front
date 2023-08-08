@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 
 function UpdateCatPage() {
+    const navigate = useNavigate();
     const { id } = useParams();
-
     const [name, setName] = useState("");
-    const [age, setAge] = useState(0);
-    const [gender, setGender] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
     const fetchCat = async () => {
-        const response = await fetch(`http://localhost:3000/cats/${id}`);
+        const response = await fetch(`http://localhost:5005/cats/cats/${id}`);
         if (response.status === 200) {
             const cat = await response.json();
             setName(cat.name);
-            setAge(cat.age);
-            setGender(cat.gender);
             setDescription(cat.description);
             setImage(cat.image);
         }
@@ -29,23 +26,21 @@ function UpdateCatPage() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3000/cats/${id}`, {
+            const response = await fetch(`http://localhost:5005/cats/cats/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, age, gender, description, image }),
+                body: JSON.stringify({ name, description, image }),
             });
             console.log(response);
-            if (response.status === 200) {
+            if (response.status === 202) {
                 const parsed = await response.json();
                 console.log(parsed);
-                // Logic to navigate to the new cat
-                // navigate(`/cats/${parsed._id}`)
+                // Logic to navigate to the updated cat
+                navigate(`/cats/${parsed._id}`);
                 // Logic to empty your state to have a clean form
                 setName("");
-                setAge(0);
-                setGender("");
                 setDescription("");
                 setImage("");
             }
@@ -56,7 +51,7 @@ function UpdateCatPage() {
 
     return (
         <div>
-            <h1> Post a cat to be Adopted </h1>
+            <h1> Update your Cat's Details</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -64,22 +59,6 @@ function UpdateCatPage() {
                     placeholder="name"
                     onChange={(e) => {
                         setName(e.target.value);
-                    }}
-                />
-                <input
-                    type="number"
-                    value={age}
-                    placeholder="age"
-                    onChange={(e) => {
-                        setAge(e.target.value);
-                    }}
-                />
-                <input
-                    type="text"
-                    value={gender}
-                    placeholder="gender"
-                    onChange={(e) => {
-                        setGender(e.target.value);
                     }}
                 />
                 <input

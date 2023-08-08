@@ -5,31 +5,27 @@ function NewCat() {
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
-    const [age, setAge] = useState(0);
-    const [gender, setGender] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch("http://localhost:3000/cats", {
+            const response = await fetch("http://localhost:5005/cats/cats", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, age, gender, description, image }),
+                body: JSON.stringify({ name, description, image }), // Remove age and gender
             });
             console.log(response);
-            if (response.status === 200) {
+            if (response.status === 201) {
                 const parsed = await response.json();
                 console.log(parsed);
-                // Logic to navigate to the list of cats
-                navigate(`/cats/${id}`);
+                // Logic to navigate to the just created cat
+                navigate(`/cats/${parsed._id}`);
                 // Logic to empty your state to have a clean form
                 setName("");
-                setAge(0);
-                setGender("");
                 setDescription("");
                 setImage("");
             }

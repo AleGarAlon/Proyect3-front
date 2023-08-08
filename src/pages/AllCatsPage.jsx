@@ -7,7 +7,7 @@ const AllCatsPage = () => {
 
     const fetchCats = async () => {
         try {
-            const response = await fetch("http://localhost:3000/cats");
+            const response = await fetch("http://localhost:5005/cats/cats");
             if (response.status === 200) {
                 const parsedCats = await response.json();
                 setCats(parsedCats);
