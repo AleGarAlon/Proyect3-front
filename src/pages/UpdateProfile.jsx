@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { AuthContext } from "../context/Auth.Context";
+import { AuthContext } from "../context/Auth.context";
 
 const UpdateProfile = () => {
     const value = useContext(AuthContext)
