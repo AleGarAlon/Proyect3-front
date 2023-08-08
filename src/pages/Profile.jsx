@@ -2,6 +2,8 @@ import axios from "axios";
 import { useContext, useState, useEffect} from "react";
 import { useNavigate, Link} from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
+import { API_URL } from "../config/config.index";
+
 
 
 
