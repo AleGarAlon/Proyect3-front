@@ -18,8 +18,8 @@ const fetchUser = async () => {
       const response = await fetch(`${API_URL}/auth/${user._id}`);
       if (response.status === 200) {
           const parsed = await response.json();
-          console.log(parsed)
-          setProfile("you fetched info is", parsed);
+          console.log("you fetched info is",parsed)
+          setProfile(parsed);
       }
   } catch (error) {
       console.error(error);
@@ -68,7 +68,7 @@ return (
             <ul>
             {profile.articles.map((article) => (
                 <>
-                <ul key={home._id}>
+                <ul key={article._id}>
                 <li >{article.title}</li>
                 </ul>
                 </>
