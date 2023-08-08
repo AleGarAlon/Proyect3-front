@@ -9,6 +9,9 @@ function Profile () {
 const value = useContext(AuthContext)
 const user = value.user
 console.log("User", user)
+const { authenticateUser } = useContext(AuthContext);
+
+
 
 useEffect(() => {
   authenticateUser();
