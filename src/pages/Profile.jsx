@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect} from "react";
 import { useNavigate, Link} from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
 
@@ -9,6 +9,10 @@ function Profile () {
 const value = useContext(AuthContext)
 const user = value.user
 console.log("User", user)
+
+useEffect(() => {
+  authenticateUser();
+}, []);
 
 return (
     <>
