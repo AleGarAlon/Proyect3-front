@@ -7,7 +7,7 @@ const AllHomesPage = () => {
 
     const fetchHomes = async () => {
         try {
-            const response = await fetch(`${API_URL}/auth/verify/api/homes/`);
+            const response = await fetch(`${API_URL}/api/homes/`);
             if (response.status === 200) {
                 const parsedHomes = await response.json();
                 setHomes(parsedHomes);
