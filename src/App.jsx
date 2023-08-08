@@ -10,6 +10,7 @@ import HomeDetailsPage from './pages/HomeDetailsPage'
 import NewHomePage from './pages/NewHomePage'
 import UpdateHomePage from './pages/UpdateHomePage'
 import IsPrivate from "./components/IsPrivate";
+import UpdateProfile from './pages/UpdateProfile';
 
 
 
@@ -25,6 +26,11 @@ function App() {
         <Route path='/profile' element={
         <IsPrivate>
         <Profile />
+        </IsPrivate>
+        } />
+        <Route path='/profile/:id/update' element={
+        <IsPrivate>
+        <UpdateProfile />
         </IsPrivate>
         } />
         <Route path='/homes' element={<AllHomesPage />} />
