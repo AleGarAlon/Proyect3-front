@@ -9,13 +9,26 @@ function Profile () {
 const value = useContext(AuthContext)
 const user = value.user
 console.log("User", user)
-const { authenticateUser } = useContext(AuthContext);
+const [profile, setProfile] = useState ("")
 
-
-
+const fetchUser = async () => {
+  try {
+      const response = await fetch(`${API_URL}/${user}`);
+      if (response.status === 200) {
+          const parsed = await response.json();
+          setProfile(parsed);
+      }
+  } catch (error) {
+      console.error(error);
+  }
+};
+//fetch data
 useEffect(() => {
-  authenticateUser();
+  fetchUser();
 }, []);
+
+
+
 
 return (
     <>
