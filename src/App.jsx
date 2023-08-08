@@ -14,9 +14,8 @@ import UpdateProfile from './pages/UpdateProfile';
 import AllCatsPage from "./pages/AllCatsPage";
 import CatDetailsPage from "./pages/CatDetailsPage";
 import NewCat from "./pages/NewCat";
-import Forum from "./pages/Forum";
-
-//import UpdateCatPage from "./pages/UpdateCatPage";
+import Articles from "./pages/Articles";
+import UpdateCatPage from "./pages/UpdateCatPage";
 
 function App() {
     return (
@@ -26,7 +25,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/forum" element={<Forum />} />
+                <Route path="/articles" element={<Articles />} />
                 <Route
                     path="/profile"
                     element={

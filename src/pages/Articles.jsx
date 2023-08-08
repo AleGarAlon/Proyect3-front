@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { API_URL } from '../config/config.index';
 
-const AllArticles = () => {
+const Articles = () => {
     const [articles, setArticles] = useState([])
 
     const fetchAllArticles = async () => {
@@ -23,8 +23,9 @@ const AllArticles = () => {
     }, []);
 
     return (
-
+        
         <>
+        <h2>Articles</h2>
         {...articles.reverse().map(article => (
                 <div key= {article._id}>
                     <p>{article.title}</p>
@@ -38,4 +39,4 @@ const AllArticles = () => {
     )
 }
 
-export default AllArticles;
+export default Articles;
