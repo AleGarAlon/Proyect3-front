@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from "../config/config.index";
 import { AuthContext } from "../context/Auth.context";
-import { useContext } from 'react';
+import { useContext, useState} from 'react';
 
 const NewArticle = () => {
     const navigate = useNavigate();
