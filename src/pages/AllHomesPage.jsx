@@ -25,7 +25,8 @@ const AllHomesPage = () => {
         <>
         {homes.map(home => (
                 <Link key={home._id} to={`/homes/${home._id}`}>
-                    {home.name}
+                    <h2>{home.name}</h2>
+                    <h3>Location: {home.location}</h3>
                 </Link>
             ))}
         </>

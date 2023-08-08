@@ -12,7 +12,7 @@ function CatDetailsPage() {
 
     const fetchCat = async () => {
         try {
-            const response = await fetch(`${API_URL}/auth/verify/cats/${id}`);
+            const response = await fetch(`${API_URL}/cats/cats/${id}`);
             if (response.status === 200) {
                 const parsedCat = await response.json();
                 setCat(parsedCat);
@@ -24,11 +24,11 @@ function CatDetailsPage() {
     //fetch data
     useEffect(() => {
         fetchCat();
-    }, []);
+    }, [id]);
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`${API_URL}/cats/${id}`, {
+            const response = await fetch(`${API_URL}/cats/cats/${id}`, {
                 method: "DELETE",
             });
             if (response.status === 202) {

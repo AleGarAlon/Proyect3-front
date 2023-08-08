@@ -41,6 +41,7 @@ const HomeDetailsPage = () => {
   ) : home ? (
     <>
       <h1>Shelter Details</h1>
+      <p>Owner: {home.Owner ? home.Owner.name : 'Unknown'}</p>
       <p>{home.name}</p>
       <p>{home.location}</p>
       <p>{home.description}</p>
