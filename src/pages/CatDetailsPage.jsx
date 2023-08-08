@@ -42,10 +42,11 @@ function CatDetailsPage() {
     // will be undefined, so we use Conditional (ternary)
     return cat ? (
         <div>
-            {" "}
-            <h1>Cat Details </h1>
-            <h3> {cat.name}</h3>
-            <button> Adopt me </button>
+            <h1>Cat Details</h1>
+            <img src={cat.imageUrl} alt="Cat" />
+            <h3>Name: {cat.name}</h3>
+            <p>Description: {cat.description}</p>
+            <button>Adopt me</button>
             <button onClick={() => navigate(`/cats/${id}/update`)}>
                 Update
             </button>

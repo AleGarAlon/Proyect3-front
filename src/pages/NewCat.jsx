@@ -48,22 +48,6 @@ function NewCat() {
                     }}
                 />
                 <input
-                    type="number"
-                    value={age}
-                    placeholder="age"
-                    onChange={(e) => {
-                        setAge(e.target.value);
-                    }}
-                />
-                <input
-                    type="text"
-                    value={gender}
-                    placeholder="gender"
-                    onChange={(e) => {
-                        setGender(e.target.value);
-                    }}
-                />
-                <input
                     type="text"
                     value={description}
                     placeholder="description"

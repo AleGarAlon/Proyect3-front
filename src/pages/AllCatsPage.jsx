@@ -38,8 +38,6 @@ const AllCatsPage = () => {
                         {" "}
                         <h3> {cat.name}</h3>
                     </Link>
-
-                    <p>{cat.description}</p>
                 </div>
             ))}
         </div>
