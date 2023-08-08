@@ -16,6 +16,7 @@ import CatDetailsPage from "./pages/CatDetailsPage";
 import NewCat from "./pages/NewCat";
 import Articles from "./pages/Articles";
 import UpdateCatPage from "./pages/UpdateCatPage";
+import NewArticle from "./pages/NewArticle";
 
 function App() {
     return (
@@ -26,6 +27,13 @@ function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/articles" element={<Articles />} />
+                <Route
+                    path="/articles/new"
+                    element={
+                        <IsPrivate>
+                            <NewArticle />
+                        </IsPrivate>
+                } />
                 <Route
                     path="/profile"
                     element={
