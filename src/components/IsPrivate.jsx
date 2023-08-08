@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/Auth.Context";
+import { AuthContext } from "../context/Auth.context";
 
 function IsPrivate({ children }) {
   //grabbing information from the context (from the frig)
