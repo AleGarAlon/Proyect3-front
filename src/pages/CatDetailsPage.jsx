@@ -46,6 +46,7 @@ function CatDetailsPage() {
             <img src={cat.imageUrl} alt="Cat" />
             <h3>Name: {cat.name}</h3>
             <p>Description: {cat.description}</p>
+            <p>Owner: {cat.Owner ? cat.Owner.name : 'Unknown'}</p>
             <button>Adopt me</button>
             <button onClick={() => navigate(`/cats/${id}/update`)}>
                 Update

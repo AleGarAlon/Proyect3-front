@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/config.index";
+import { AuthContext } from "../context/Auth.context";
+import { useContext } from 'react';
 
 function NewCat() {
     const navigate = useNavigate();
+
+    const authContext = useContext(AuthContext); // Use the AuthContext
+    const userId = authContext.user._id;
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -12,12 +17,18 @@ function NewCat() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
+            const payload = {
+                name,
+                description,
+                image,
+                Owner: userId, // Include the owner's ID in the payload
+            };
             const response = await fetch(`${API_URL}/cats/cats`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, description, image }), // Remove age and gender
+                body: JSON.stringify(payload),
             });
             console.log(response);
             if (response.status === 201) {
