@@ -19,7 +19,7 @@ const fetchUser = async () => {
       if (response.status === 200) {
           const parsed = await response.json();
           console.log(parsed)
-          setProfile(parsed);
+          setProfile("you fetched info is", parsed);
       }
   } catch (error) {
       console.error(error);
@@ -59,23 +59,7 @@ return (
     )}
     <Link to="/cats/new"><button>Add a new cat for adoption</button> </Link>
 
-    {profile.house && profile.house.length > 0 ? (
-        <div>
-            <p>Your houses</p>
-            <ul>
-            {profile.house.map((home) => (
-                <>
-                <ul key={home._id}>
-                <li >{home.name}</li>
-                <li>{home.photo}</li>
-                </ul>
-                </>
-            ))}
-            </ul>
-        </div>
-        ) : (
-            <p></p>
-        )}
+   
     <Link to="/homes/new"><button>Add a new home</button> </Link>  
 
     {profile.articles && profile.articles.length > 0 ? (
