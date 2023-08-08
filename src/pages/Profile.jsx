@@ -15,7 +15,7 @@ const [profile, setProfile] = useState ("")
 
 const fetchUser = async () => {
   try {
-      const response = await fetch(`${API_URL}/${user}`);
+      const response = await fetch(`${API_URL}/${user._id}`);
       if (response.status === 200) {
           const parsed = await response.json();
           setProfile(parsed);
