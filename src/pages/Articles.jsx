@@ -25,7 +25,8 @@ const Articles = () => {
     return (
         
         <>
-        <h2>Articles</h2>
+        <h2>Whisker Chronicles</h2>
+        <Link to="/articles/new"><button>add a tail-tales</button> </Link>
         {...articles.reverse().map(article => (
                 <div key= {article._id}>
                     <p>{article.title}</p>
