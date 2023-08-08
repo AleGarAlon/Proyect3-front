@@ -1,5 +1,3 @@
-//  the Home creation form does not need to handle the Owner and Friends fields, as these will likely be handled elsewhere in our application (e.g., Owner might be determined based on the currently logged-in user, and Friends might be added after a Home is created).
-
 import { useState } from 'react';
 
 const HomeForm = ({ onSubmit, home }) => {

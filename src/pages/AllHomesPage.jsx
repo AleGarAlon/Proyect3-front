@@ -7,7 +7,7 @@ const AllHomesPage = () => {
 
     const fetchHomes = async () => {
         try {
-            const response = await fetch(`${API_URL}/auth/verify/api/homes/`);
+            const response = await fetch(`${API_URL}/api/homes/`);
             if (response.status === 200) {
                 const parsedHomes = await response.json();
                 setHomes(parsedHomes);
@@ -25,7 +25,8 @@ const AllHomesPage = () => {
         <>
         {homes.map(home => (
                 <Link key={home._id} to={`/homes/${home._id}`}>
-                    {home.name}
+                    <h2>{home.name}</h2>
+                    <h3>Location: {home.location}</h3>
                 </Link>
             ))}
         </>

@@ -1,12 +1,23 @@
 import { useNavigate } from 'react-router-dom';
 import HomeForm from '../components/HomeForm';
 import { API_URL } from "../config/config.index";
+import { AuthContext } from "../context/Auth.context";
+import { useContext } from 'react';
 
 const NewHomePage = () => {
     const navigate = useNavigate();
 
+    const authContext = useContext(AuthContext); // Use the AuthContext
+
+    const userId = authContext.user._id;
+
+
     const handleSubmit = async payload => {
         try {
+
+            // Include the user's ID in the payload
+            payload.Owner = userId;
+
             const response = await fetch(`${API_URL}/api/homes/`, {
                 method: 'POST',
                 headers: {

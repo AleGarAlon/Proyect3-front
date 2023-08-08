@@ -8,7 +8,7 @@ const AllCatsPage = () => {
 
     const fetchCats = async () => {
         try {
-            const response = await fetch(`${API_URL}/auth/verify/cats`);
+            const response = await fetch(`${API_URL}/cats/cats`);
             if (response.status === 200) {
                 const parsedCats = await response.json();
                 setCats(parsedCats);
