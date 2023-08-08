@@ -15,7 +15,7 @@ return (
 
     <img src={user.image} alt="profile image" />
     <h2>{user.name}'s profile page</h2>
-    <Link to= {`/profile/${user._id}/update`}><button>Update your profile</button> </Link>
+    
 
     {user.cat.length > 0 ? (
       <div>
