@@ -15,15 +15,13 @@ const NewArticle = () => {
         event.preventDefault();
         
 
-
-        payload.author = userId
         try {
             const response = await fetch(`${API_URL}/articles`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ title, information, author}),
+                body: JSON.stringify({ title, information, author : userId}),
             });
             console.log(response);
             if (response.status === 201) {
