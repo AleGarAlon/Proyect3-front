@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import HomeForm from '../components/HomeForm';
+import { API_URL } from "../config/config.index";
 
 const NewHomePage = () => {
     const navigate = useNavigate();
 
     const handleSubmit = async payload => {
         try {
-            const response = await fetch('http://localhost:5005/api/homes/', {
+            const response = await fetch(`${API_URL}/api/homes/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

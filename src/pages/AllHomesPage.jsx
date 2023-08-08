@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/config.index';
 
 const AllHomesPage = () => {
     const [homes, setHomes] = useState([]);
 
     const fetchHomes = async () => {
         try {
-            const response = await fetch('http://localhost:5005/api/homes/');
+            const response = await fetch(`${API_URL}/auth/verify/api/homes/`);
             if (response.status === 200) {
                 const parsedHomes = await response.json();
                 setHomes(parsedHomes);

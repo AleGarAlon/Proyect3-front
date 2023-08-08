@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_URL } from "../config/config.index";
 
 function CatDetailsPage() {
     //destructure id
@@ -11,7 +12,7 @@ function CatDetailsPage() {
 
     const fetchCat = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/cats/${id}`);
+            const response = await fetch(`${API_URL}/auth/verify/cats/${id}`);
             if (response.status === 200) {
                 const parsedCat = await response.json();
                 setCat(parsedCat);
@@ -27,7 +28,7 @@ function CatDetailsPage() {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/cats/${id}`, {
+            const response = await fetch(`${API_URL}/cats/${id}`, {
                 method: "DELETE",
             });
             if (response.status === 202) {

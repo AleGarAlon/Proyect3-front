@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import HomeForm from '../components/HomeForm';
+import { API_URL } from '../config/config.index';
 
 const UpdateHomePage = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const UpdateHomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchHome = async () => {
-    const response = await fetch(`http://localhost:5005/api/homes/${id}`);
+    const response = await fetch(`${API_URL}/api/homes/${id}`);
     if (response.status === 200) {
       const home = await response.json();
       setName(home.name);
@@ -31,7 +32,7 @@ const UpdateHomePage = () => {
 
   const handleSubmit = async payload => {
     try {
-      const response = await fetch(`http://localhost:5005/api/homes/${id}`, {
+      const response = await fetch(`${API_URL}/api/homes/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

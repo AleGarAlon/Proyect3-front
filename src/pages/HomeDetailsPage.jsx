@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { API_URL } from '../config/config.index';
 
 const HomeDetailsPage = () => {
   /* Get back the homeId */
@@ -12,7 +13,7 @@ const HomeDetailsPage = () => {
   /* Fetch our home */
   useEffect(() => {
     const fetchHome = async () => {
-      const response = await fetch(`http://localhost:5005/api/homes/${id}`);
+      const response = await fetch(`${API_URL}/api/homes/${id}`);
       if (response.status === 200) {
         const parsed = await response.json();
         setHome(parsed);
@@ -24,7 +25,7 @@ const HomeDetailsPage = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5005/api/homes/${id}`, {
+      const response = await fetch(`${API_URL}/api/homes/${id}`, {
         method: 'DELETE',
       });
       if (response.status === 202) {

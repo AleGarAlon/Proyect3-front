@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { API_URL } from "../config/config.index";
 
 function UpdateCatPage() {
     const { id } = useParams();
@@ -11,7 +12,7 @@ function UpdateCatPage() {
     const [image, setImage] = useState("");
 
     const fetchCat = async () => {
-        const response = await fetch(`http://localhost:3000/cats/${id}`);
+        const response = await fetch(`${API_URL}/cats/${id}`);
         if (response.status === 200) {
             const cat = await response.json();
             setName(cat.name);

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { API_URL } from "../config/config.index";
 
 const AllCatsPage = () => {
     //store data
@@ -7,7 +8,7 @@ const AllCatsPage = () => {
 
     const fetchCats = async () => {
         try {
-            const response = await fetch("http://localhost:3000/cats");
+            const response = await fetch(`${API_URL}/auth/verify/cats`);
             if (response.status === 200) {
                 const parsedCats = await response.json();
                 setCats(parsedCats);

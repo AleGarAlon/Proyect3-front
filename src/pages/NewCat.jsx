@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/config.index";
 
 function NewCat() {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ function NewCat() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch("http://localhost:3000/cats", {
+            const response = await fetch(`${API_URL}/cats`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
