@@ -18,6 +18,7 @@ const fetchUser = async () => {
       const response = await fetch(`${API_URL}/auth/${user._id}`);
       if (response.status === 200) {
           const parsed = await response.json();
+          console.log(parsed)
           setProfile(parsed);
       }
   } catch (error) {
@@ -39,7 +40,7 @@ return (
     <h2>{user.name}'s profile page</h2>
     
 
-    {profile.cat.length > 0 ? (
+    {profile.cat && profile.cat.length > 0 ? (
       <div>
         <p>Your cats for adoption</p>
         <ul>
@@ -58,7 +59,7 @@ return (
     )}
     <Link to="/cats/new"><button>Add a new cat for adoption</button> </Link>
 
-    {profile.house.length > 0 ? (
+    {profile.house && profile.house.length > 0 ? (
         <div>
             <p>Your houses</p>
             <ul>
@@ -77,6 +78,22 @@ return (
         )}
     <Link to="/homes/new"><button>Add a new home</button> </Link>  
 
+    {profile.articles && profile.articles.length > 0 ? (
+        <div>
+            <p>Your articles</p>
+            <ul>
+            {profile.articles.map((article) => (
+                <>
+                <ul key={home._id}>
+                <li >{article.title}</li>
+                </ul>
+                </>
+            ))}
+            </ul>
+        </div>
+        ) : (
+            <p></p>
+        )}
     </>
 )
 }
