@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { useContext, useState, useEffect} from "react";
 import { useNavigate, Link} from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
@@ -35,21 +35,19 @@ useEffect(() => {
 return (
     <>
 
-    <img src={user.image} alt="profile image" />
+    <img src={profile.image} alt="profile image" />
     <h2>{user.name}'s profile page</h2>
     
 
-    {user.cat.length > 0 ? (
+    {profile.cat.length > 0 ? (
       <div>
         <p>Your cats for adoption</p>
         <ul>
-          {user.cat.map((c) => (
+          {profile.cat.map((c) => (
             <>
             <ul key={c._id}>
-            <Link to="/cats/"{...c._id}>
             <li >{c.name}</li>
             <li>{c.photo}</li>
-            </Link>
             </ul>
             </>
           ))}
@@ -60,17 +58,15 @@ return (
     )}
     <Link to="/cats/new"><button>Add a new cat for adoption</button> </Link>
 
-    {user.cat.length > 0 ? (
+    {profile.house.length > 0 ? (
         <div>
             <p>Your houses</p>
             <ul>
-            {user.house.map((home) => (
+            {profile.house.map((home) => (
                 <>
                 <ul key={home._id}>
-                <Link to="='/homes/"{...home._id}>
                 <li >{home.name}</li>
                 <li>{home.photo}</li>
-                </Link>
                 </ul>
                 </>
             ))}
