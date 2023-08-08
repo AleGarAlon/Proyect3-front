@@ -37,7 +37,7 @@ return (
     <>
 
     <img src={profile.image} alt="profile image" />
-    <h2>{user.name}'s profile page</h2>
+    <h2>{profile.name}'s profile page</h2>
     
 
     {profile.cat && profile.cat.length > 0 ? (
