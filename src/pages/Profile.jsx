@@ -7,8 +7,10 @@ function Profile () {
 const value = useContext(AuthContext)
 const user = value.user
 console.log("User", user)
+const setUser = value.setUser;
 const [profile, setProfile] = useState ("")
 const navigate = useNavigate();
+const {logout } = useContext(AuthContext);
 
 const fetchUser = async () => {
   try {
@@ -63,6 +65,12 @@ useEffect(() => {
     }
   };
 
+  const handleLogout = () => {
+    // Clear user context and token, and redirect to login
+    logout();
+    navigate("/login");
+  };
+
     return (
         <>
 
@@ -77,8 +85,10 @@ useEffect(() => {
             {profile.cat.map((c) => (
             
                 <div key={c._id}>
-                <img src={c.image} alt={c.name} />
+                <Link to={`/cats/${c._id}`}>
                 <p >{c.name}</p>
+                </Link>
+                <p>{c.photo}</p>
                 <Link to={`/cats/${c._id}/update`}>Edit Cat</Link>
                 <button onClick={() => handleCatDelete(c._id)}>Delete Cat</button>
                 </div>
@@ -98,7 +108,9 @@ useEffect(() => {
                 {profile.house.map((home) => (
                     
                     <ul key={home._id}>
+                    <Link to={`/homes/${home._id}`}>
                     <li >{home.name}</li>
+                    </Link>
                     <li>{home.photo}</li>
                     <Link to={`/homes/${home._id}/edit`}>Edit House</Link>
                     <button onClick={() => handleHomeDelete(home._id)}>Delete House</button>
@@ -148,6 +160,8 @@ useEffect(() => {
           ) : (
               <p></p>
           )}
+
+        <button onClick={handleLogout}>Logout</button>
         </>  
     )
 

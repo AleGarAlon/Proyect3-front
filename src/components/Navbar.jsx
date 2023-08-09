@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import IsPrivate from "./IsPrivate";
+import { AuthContext } from '../context/Auth.context';
 
 const Navbar = () => {
+  const { isLoggedIn } = useContext(AuthContext);
+
   return (
     <nav className="navbar">
       <ul>
@@ -17,7 +20,7 @@ const Navbar = () => {
         <li>
           <Link to="/articles">Articles</Link>
         </li>
-        {IsPrivate ? (
+        {isLoggedIn ? (
           // These links will be shown if the user is authenticated
           <>
             <li>
