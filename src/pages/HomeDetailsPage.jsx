@@ -23,7 +23,7 @@ const HomeDetailsPage = () => {
     fetchHome();
   }, [id]);
 
-  const handleDelete = async () => {
+  /*const handleDelete = async () => {
     try {
       const response = await fetch(`${API_URL}/api/homes/${id}`, {
         method: 'DELETE',
@@ -34,7 +34,7 @@ const HomeDetailsPage = () => {
     } catch (error) {
       console.error(error);
     }
-  };
+  };*/
 
   return isLoading ? (
     <h1>Loading...</h1>
@@ -46,8 +46,8 @@ const HomeDetailsPage = () => {
       <p>{home.location}</p>
       <p>{home.description}</p>
       <img src={home.photo} alt="Home Photo" />
-      <button onClick={() => navigate(`/homes/${id}/edit`)}>Update</button>
-      <button onClick={handleDelete}>Delete</button>
+      <button>Contact Owner</button>
+
     </>
   ) : (
     <h1>There was an error</h1>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import IsPrivate from "./IsPrivate";
 
 const Navbar = () => {
   return (
@@ -16,9 +17,25 @@ const Navbar = () => {
         <li>
           <Link to="/articles">Articles</Link>
         </li>
-        <li>
-          <Link to="/profile">My Profile</Link>
-        </li>
+        {IsPrivate ? (
+          // These links will be shown if the user is authenticated
+          <>
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+            {/* Add other authenticated links */}
+          </>
+        ) : (
+          // These links will be shown if the user is not authenticated
+          <>
+            <li>
+              <Link to="/signup">Sign Up</Link>
+            </li>
+            <li>
+              <Link to="/login">Log In</Link>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );

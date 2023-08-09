@@ -8,6 +8,7 @@ const value = useContext(AuthContext)
 const user = value.user
 console.log("User", user)
 const [profile, setProfile] = useState ("")
+const navigate = useNavigate();
 
 const fetchUser = async () => {
   try {
@@ -22,13 +23,45 @@ const fetchUser = async () => {
   }
 };
 
-//fetch data
 useEffect(() => {
-  fetchUser();
-}, []);
-
-
-
+    fetchUser();
+  }, []);
+  
+  // ...
+  
+  const handleCatDelete = async (id) => {
+    try {
+      const response = await fetch(`${API_URL}/cats/cats/${id}`, {
+        method: 'DELETE',
+      });
+      if (response.status === 202) {
+        // Remove the deleted cat from the profile state
+        setProfile((prevProfile) => ({
+          ...prevProfile,
+          cat: prevProfile.cat.filter((cat) => cat._id !== id),
+        }));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  const handleHomeDelete = async (id) => {
+    try {
+      const response = await fetch(`${API_URL}/api/homes/${id}`, {
+        method: 'DELETE',
+      });
+      if (response.status === 202) {
+        // Remove the deleted home from the profile state
+        setProfile((prevProfile) => ({
+          ...prevProfile,
+          house: prevProfile.house.filter((home) => home._id !== id),
+        }));
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 return (
     <>
@@ -46,6 +79,8 @@ return (
             <div key={c._id}>
             <p >{c.name}</p>
             <p>{c.photo}</p>
+            <Link to={`/cats/${c._id}/update`}>Edit Cat</Link>
+            <button onClick={() => handleCatDelete(c._id)}>Delete Cat</button>
             </div>
             </>
           ))}
@@ -63,10 +98,10 @@ return (
             {profile.house.map((home) => (
                 <>
                 <ul key={home._id}>
-                <Link to="='/homes/"{...home._id}>
                 <li >{home.name}</li>
                 <li>{home.photo}</li>
-                </Link>
+                <Link to={`/homes/${home._id}/edit`}>Edit House</Link>
+                <button onClick={() => handleHomeDelete(home._id)}>Delete House</button>
                 </ul>
                 </>
             ))}
