@@ -29,7 +29,7 @@ function CatDetailsPage() {
         fetchCat();
     }, [id]);
 
-    const handleDelete = async () => {
+    /*const handleDelete = async () => {
         try {
             const response = await fetch(`${API_URL}/cats/cats/${id}`, {
                 method: "DELETE",
@@ -40,7 +40,7 @@ function CatDetailsPage() {
         } catch (error) {
             console.error(error);
         }
-    };
+    }; */
 
     // will be undefined, so we use Conditional (ternary)
     return cat ? (
@@ -50,11 +50,9 @@ function CatDetailsPage() {
             <h3>Name: {cat.name}</h3>
             <p>Description: {cat.description}</p>
             <p>Owner: {cat.Owner ? cat.Owner.name : 'Unknown'}</p>
-            <button>Adopt me</button>
             <button onClick={() => navigate(`/comment/${cat.Owner._id}`)}>
                 Reach the owner
             </button>
-            <button onClick={handleDelete}>Delete</button>
         </div>
     ) : (
         <h1> Loading </h1>
