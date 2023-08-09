@@ -56,7 +56,25 @@ return (
     )}
     <Link to="/cats/new"><button>Add a new cat for adoption</button> </Link>
 
-   
+    {profile.house && profile.house.length > 0 ? (
+        <div>
+            <p>Your houses</p>
+            <ul>
+            {profile.house.map((home) => (
+                <>
+                <ul key={home._id}>
+                <Link to="='/homes/"{...home._id}>
+                <li >{home.name}</li>
+                <li>{home.photo}</li>
+                </Link>
+                </ul>
+                </>
+            ))}
+            </ul>
+        </div>
+        ) : (
+            <p></p>
+        )}
     <Link to="/homes/new"><button>Add a new home</button> </Link>  
     
     {profile.articles && profile.articles.length > 0 ? (
