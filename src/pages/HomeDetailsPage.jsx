@@ -46,7 +46,7 @@ const HomeDetailsPage = () => {
       <p>{home.location}</p>
       <p>{home.description}</p>
       <img src={home.photo} alt="Home Photo" />
-      <button onClick={() => navigate(`/homes/${id}/edit`)}>Update</button>
+      <button onClick={() => navigate(`/comment/${home.Owner._id}`)}>Reach the owner</button>
       <button onClick={handleDelete}>Delete</button>
     </>
   ) : (
