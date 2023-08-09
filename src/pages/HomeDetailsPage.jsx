@@ -46,8 +46,7 @@ const HomeDetailsPage = () => {
       <p>{home.location}</p>
       <p>{home.description}</p>
       <img src={home.photo} alt="Home Photo" />
-      <button>Contact Owner</button>
-
+      <button onClick={() => navigate(`/comment/${home.Owner._id}`)}>Reach the owner</button>
     </>
   ) : (
     <h1>There was an error</h1>

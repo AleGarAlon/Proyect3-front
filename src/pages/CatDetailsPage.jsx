@@ -15,7 +15,10 @@ function CatDetailsPage() {
             const response = await fetch(`${API_URL}/cats/cats/${id}`);
             if (response.status === 200) {
                 const parsedCat = await response.json();
+                console.log(parsedCat)
+                console.log(parsedCat.Owner._id)
                 setCat(parsedCat);
+                
             }
         } catch (error) {
             console.error(error);
@@ -47,7 +50,9 @@ function CatDetailsPage() {
             <h3>Name: {cat.name}</h3>
             <p>Description: {cat.description}</p>
             <p>Owner: {cat.Owner ? cat.Owner.name : 'Unknown'}</p>
-            <button>Adopt me</button>
+            <button onClick={() => navigate(`/comment/${cat.Owner._id}`)}>
+                Reach the owner
+            </button>
         </div>
     ) : (
         <h1> Loading </h1>
