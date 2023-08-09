@@ -1,4 +1,3 @@
-
 import { useContext, useState, useEffect} from "react";
 import { useNavigate, Link} from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
@@ -25,6 +24,7 @@ const fetchUser = async () => {
       console.error(error);
   }
 };
+
 //fetch data
 useEffect(() => {
   fetchUser();
@@ -46,10 +46,10 @@ return (
         <ul>
           {profile.cat.map((c) => (
             <>
-            <ul key={c._id}>
-            <li >{c.name}</li>
-            <li>{c.photo}</li>
-            </ul>
+            <div key={c._id}>
+            <p >{c.name}</p>
+            <p>{c.photo}</p>
+            </div>
             </>
           ))}
         </ul>
@@ -68,9 +68,9 @@ return (
             <ul>
             {profile.articles.map((article) => (
                 <>
-                <ul key={article._id}>
-                <li >{article.title}</li>
-                </ul>
+                <div key={article._id}>
+                <p >{article.title}</p>
+                </div>
                 </>
             ))}
             </ul>
