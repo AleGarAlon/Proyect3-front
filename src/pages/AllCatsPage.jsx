@@ -30,7 +30,7 @@ const AllCatsPage = () => {
             {cats.map((cat) => (
                 <div key={cat._id}>
                     <img
-                        src={cat.imageUrl}
+                        src={cat.image}
                         alt={cat.name}
                         style={{ height: "200px" }}
                     />

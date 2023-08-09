@@ -77,8 +77,8 @@ useEffect(() => {
             {profile.cat.map((c) => (
             
                 <div key={c._id}>
+                <img src={c.image} alt="{c.name}" />
                 <p >{c.name}</p>
-                <p>{c.photo}</p>
                 <Link to={`/cats/${c._id}/update`}>Edit Cat</Link>
                 <button onClick={() => handleCatDelete(c._id)}>Delete Cat</button>
                 </div>

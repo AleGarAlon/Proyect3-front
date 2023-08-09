@@ -46,7 +46,7 @@ function CatDetailsPage() {
     return cat ? (
         <div>
             <h1>Cat Details</h1>
-            <img src={cat.imageUrl} alt="Cat" />
+            <img src={cat.image} alt={cat.name} />
             <h3>Name: {cat.name}</h3>
             <p>Description: {cat.description}</p>
             <p>Owner: {cat.Owner ? cat.Owner.name : 'Unknown'}</p>
