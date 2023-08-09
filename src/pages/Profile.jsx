@@ -27,6 +27,9 @@ useEffect(() => {
   fetchUser();
 }, []);
 
+
+
+
 return (
     <>
 
@@ -40,10 +43,10 @@ return (
         <ul>
           {profile.cat.map((c) => (
             <>
-            <ul key={c._id}>
-            <li >{c.name}</li>
-            <li>{c.photo}</li>
-            </ul>
+            <div key={c._id}>
+            <p >{c.name}</p>
+            <p>{c.photo}</p>
+            </div>
             </>
           ))}
         </ul>
