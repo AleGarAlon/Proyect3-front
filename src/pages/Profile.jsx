@@ -60,6 +60,27 @@ return (
     <Link to="/cats/new"><button>Add a new cat for adoption</button> </Link>
 
    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
     <Link to="/homes/new"><button>Add a new home</button> </Link>  
 
     {profile.articles && profile.articles.length > 0 ? (
