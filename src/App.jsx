@@ -10,7 +10,7 @@ import HomeDetailsPage from "./pages/HomeDetailsPage";
 import NewHomePage from "./pages/NewHomePage";
 import UpdateHomePage from "./pages/UpdateHomePage";
 import IsPrivate from "./components/IsPrivate";
-import UpdateProfile from './pages/UpdateProfile';
+import UpdateProfile from "./pages/UpdateProfile";
 import AllCatsPage from "./pages/AllCatsPage";
 import CatDetailsPage from "./pages/CatDetailsPage";
 import NewCat from "./pages/NewCat";
@@ -33,21 +33,26 @@ function App() {
                         <IsPrivate>
                             <NewArticle />
                         </IsPrivate>
-                } />
+                    }
+                />
                 <Route
                     path="/profile"
                     element={
                         <IsPrivate>
                             <Profile />
                         </IsPrivate>
-                } />
-                
-                <Route path='/profile/:id/update' element={
-                <IsPrivate>
-                <UpdateProfile />
-                </IsPrivate>
-                    }/>
-                    
+                    }
+                />
+
+                <Route
+                    path="/profile/:id/update"
+                    element={
+                        <IsPrivate>
+                            <UpdateProfile />
+                        </IsPrivate>
+                    }
+                />
+
                 <Route path="/homes" element={<AllHomesPage />} />
                 <Route
                     path="/homes/new"
