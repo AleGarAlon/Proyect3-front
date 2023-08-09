@@ -1,3 +1,4 @@
+
 import { useContext, useState, useEffect} from "react";
 import { useNavigate, Link} from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
@@ -10,13 +11,27 @@ function Profile () {
 const value = useContext(AuthContext)
 const user = value.user
 console.log("User", user)
-const { authenticateUser } = useContext(AuthContext);
+const [profile, setProfile] = useState ("")
 
-
-
+const fetchUser = async () => {
+  try {
+      const response = await fetch(`${API_URL}/auth/${user._id}`);
+      if (response.status === 200) {
+          const parsed = await response.json();
+          console.log("you fetched info is",parsed)
+          setProfile(parsed);
+      }
+  } catch (error) {
+      console.error(error);
+  }
+};
+//fetch data
 useEffect(() => {
-  authenticateUser();
+  fetchUser();
 }, []);
+
+
+
 
 return (
     <>
