@@ -23,19 +23,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
     position: absolute;
     top: 267px;
     left: 150px;
 }
 
-h1 {
+.home-text-section h1 {
     font-size: clamp(5rem, 5vw, 4rem);
     color: #4c4c4c;
     max-width: 600px;
     font-family: "Comfortaa", cursive;
 }
-p {
+.home-text-section p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
     margin-top: 45px;
