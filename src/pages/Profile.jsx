@@ -68,9 +68,9 @@ return (
             <ul>
             {profile.articles.map((article) => (
                 <>
-                <div key={article._id}>
-                <p >{article.title}</p>
-                </div>
+                <ul key={article._id}>
+                <li >{article.title}</li>
+                </ul>
                 </>
             ))}
             </ul>
