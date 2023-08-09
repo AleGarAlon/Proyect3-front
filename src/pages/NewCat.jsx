@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/config.index";
 import { AuthContext } from "../context/Auth.context";
-import { useContext } from 'react';
 
 function NewCat() {
     const navigate = useNavigate();
 
     const authContext = useContext(AuthContext); // Use the AuthContext
+
     const userId = authContext.user._id;
 
     const [name, setName] = useState("");
@@ -28,7 +28,7 @@ function NewCat() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(payload),
+                body: JSON.stringify(payload), // Remove age and gender
             });
             console.log(response);
             if (response.status === 201) {
