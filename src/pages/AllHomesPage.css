@@ -1,11 +1,11 @@
-.all-homes h1 {
+.all-houses h1 {
     text-align: center;
     font-family: "Comfortaa", cursive;
     color: #4c4c4c;
     position: relative;
 }
 
-.home-container {
+.house-container {
     margin-top: 5rem;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     gap: 13px;
 }
-.home-card {
+.house-card {
     width: 300px;
     min-height: 350px;
     background-color: white;
@@ -27,23 +27,23 @@
     color: #505050;
     margin: 0rem 2rem;
 }
-.home-card a {
+.house-card a {
     text-decoration: none;
 }
-.home-card h3 {
+.house-card h3 {
     font-family: "Comfortaa", cursive;
     color: #4c4c4c;
     margin-top: 25px;
     font-size: 1.5rem;
     font-weight: 500;
 }
-.home-card p {
+.house-card p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
     margin-top: 45px;
     opacity: 0.6;
     line-height: 30px;
-	 color: #505050;
+    color: #505050;
 }
 .styling-image-container {
     max-width: 600px;

@@ -20,3 +20,21 @@ li a {
 li a:hover {
     color: var(--secondary-color);
 }
+.signup,
+.login {
+    padding: 0.8rem 1.7rem;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.signup:hover {
+    background-color: rgb(234, 234, 234);
+}
+.login:hover {
+    background-color: rgb(234, 234, 234);
+}

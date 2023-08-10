@@ -33,10 +33,10 @@ const Navbar = () => {
           // These links will be shown if the user is not authenticated
           <>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/signup" className='signup'>Sign Up</Link>
             </li>
             <li>
-              <Link to="/login">Log In</Link>
+              <Link to="/login" className='login'>Log In</Link>
             </li>
           </>
         )}

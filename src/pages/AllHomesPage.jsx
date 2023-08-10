@@ -26,11 +26,11 @@ const AllHomesPage = () => {
     }, []);
 
     return (
-        <div className="all-homes">
+        <div className="all-houses">
             <h1> Shelters for out little creautures</h1>
-            <div className="home-container">
+            <div className="house-container">
                 {homes.map((home) => (
-                    <div key={home._id} className="home-card">
+                    <div key={home._id} className="house-card">
                         <Link to={`/homes/${home._id}`}>
                             <img
                                 src={home.photo}
