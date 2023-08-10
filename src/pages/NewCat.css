@@ -1,0 +1,17 @@
+.new-cat {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin: 25px 184px;
+    height: 130vh;
+    width: 1200px;
+    border: grey;
+}
+.new-cat h1 {
+    font-family: "Comfortaa", cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: #4c4c4c;
+    font-weight: 700;
+    line-height: 240px;
+}

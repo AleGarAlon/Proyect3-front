@@ -3,7 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
 import { API_URL } from "../config/config.index";
 import "./Profile.css";
-import Ariola from "../assets/ariola.jpeg";
 
 function Profile() {
     const value = useContext(AuthContext);
@@ -76,7 +75,7 @@ function Profile() {
     return profile ? (
         <div className="profile-container">
             <div className="profile-actions">
-                <img src={Ariola} alt="profile image" />
+                <img src={profile.image} alt="profile image" />
                 <Link to="/cats/new">
                     <button className="profile-btns">
                         Add a new cat for adoption

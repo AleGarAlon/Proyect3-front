@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/config.index";
 import { AuthContext } from "../context/Auth.context";
+import "./NewCat.css";
 
 function NewCat() {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ function NewCat() {
     };
 
     return (
-        <div>
+        <div className="new-cat">
             <h1> Post a cat to be Adopted </h1>
             <form onSubmit={handleSubmit}>
                 <input
