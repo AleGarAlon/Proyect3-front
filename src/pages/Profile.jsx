@@ -71,7 +71,7 @@ useEffect(() => {
     navigate("/login");
   };
 
-    return (
+    return profile ? (
         <>
 
         <img src={profile.image} alt="profile image" />
@@ -80,7 +80,7 @@ useEffect(() => {
 
         {profile.cat && profile.cat.length > 0 ? (
         <div>
-            <p>Your cats for adoption</p>
+            <h3>Your cats for adoption</h3>
             <ul>
             {profile.cat.map((c) => (
             
@@ -103,7 +103,7 @@ useEffect(() => {
 
         {profile.house && profile.house.length > 0 ? (
             <div>
-                <p>Your houses</p>
+                <h3>Your houses</h3>
                 <ul>
                 {profile.house.map((home) => (
                     
@@ -126,7 +126,7 @@ useEffect(() => {
         
         {profile.articles && profile.articles.length > 0 ? (
             <div>
-                <p>Your articles</p>
+                <h3>Your articles</h3>
                 <ul>
                 {profile.articles.map((article) => (
                     <>
@@ -143,7 +143,7 @@ useEffect(() => {
         
          {profile.comments && profile.comments.length > 0 ? (
             <div>
-              <p>Your comments</p>
+              <h3>Your comments</h3>
               <ul>
                 {profile.comments.map((c) => (
                   <div key={c._id}>
@@ -163,6 +163,8 @@ useEffect(() => {
 
         <button onClick={handleLogout}>Logout</button>
         </>  
+        ) : (
+            <h1>Wait... we have a furball...</h1>
     )
 
 }

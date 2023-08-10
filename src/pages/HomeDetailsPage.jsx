@@ -37,14 +37,14 @@ const HomeDetailsPage = () => {
   };*/
 
   return isLoading ? (
-    <h1>Loading...</h1>
+    <h1>Wait... we have a furball...</h1>
   ) : home ? (
     <>
-      <h1>Shelter Details</h1>
+      <h1>Choose the purrfect house fur your cat</h1>
       <p>Owner: {home.Owner ? home.Owner.name : 'Unknown'}</p>
-      <p>{home.name}</p>
-      <p>{home.location}</p>
-      <p>{home.description}</p>
+      <p>House name: {home.name}</p>
+      <p>Location: {home.location}</p>
+      <p>Description: {home.description}</p>
       <img src={home.photo} alt="Home Photo" />
       <button onClick={() => navigate(`/comment/${home.Owner._id}`)}>Reach the owner</button>
     </>

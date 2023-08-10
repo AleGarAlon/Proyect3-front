@@ -55,7 +55,7 @@ function CatDetailsPage() {
             </button>
         </div>
     ) : (
-        <h1> Loading </h1>
+        <h1>Wait... we have a furball...</h1>
     );
 }
 
