@@ -12,7 +12,7 @@ const HomeForm = ({ onSubmit, home }) => {
     };
 
     return (
-        <div className="new-shelter-form">
+        <div>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -45,7 +45,7 @@ const HomeForm = ({ onSubmit, home }) => {
                         setPhoto(e.target.value);
                     }}
                 />
-                <button type="submit" className="new-shelter-btn">
+                <button type="submit" className="shelter-btn">
                     Submit
                 </button>
             </form>
