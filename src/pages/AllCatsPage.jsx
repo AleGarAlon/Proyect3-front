@@ -32,16 +32,16 @@ const AllCatsPage = () => {
             <div className="cat-container">
                 {cats.map((cat) => (
                     <div key={cat._id} className="cat-card">
+                        <Link to={`/cats/${cat._id}`}>
                         <img
                             src={cat.image}
                             alt={cat.name}
                             style={{ height: "200px" }}
                         />
-                        <Link to={`/cats/${cat._id}`}>
                             {" "}
                             <h3> {cat.name}</h3>
-                        </Link>
                         <p>{cat.description}</p>
+                        </Link>
                     </div>
                 ))}
             </div>
