@@ -29,7 +29,7 @@ const Articles = () => {
         <Link to="/articles/new"><button>add a tail-tales</button> </Link>
         {...articles.reverse().map(article => (
                 <div key= {article._id}>
-                    <p>{article.title}</p>
+                    <h3>{article.title}</h3>
                     <p>{article.information}</p> 
                 </div>
             ))}
