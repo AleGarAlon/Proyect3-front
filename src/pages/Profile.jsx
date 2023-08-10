@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/Auth.context";
 import { API_URL } from "../config/config.index";
 import "./Profile.css";
+import Ariola from "../assets/ariola.jpeg";
 
 function Profile() {
     const value = useContext(AuthContext);
@@ -75,7 +76,7 @@ function Profile() {
     return profile ? (
         <div className="profile-container">
             <div className="profile-actions">
-                <img src={profile.image} alt="profile image" />
+                <img src={Ariola} alt="profile image" />
                 <Link to="/cats/new">
                     <button className="profile-btns">
                         Add a new cat for adoption
@@ -89,95 +90,105 @@ function Profile() {
                 </button>
             </div>
             <div className="profile-information">
-                <h2>Hey {profile.name}!</h2>
+                <h2>Hey {profile.name}! </h2>
 
+                <h3>Your cats for adoption</h3>
                 {profile.cat && profile.cat.length > 0 ? (
-                    <div>
-                        <h3>Your cats for adoption</h3>
-                        <ul>
-                            {profile.cat.map((c) => (
-                                <div key={c._id}>
+                    <div className="prifile-cats">
+                        {profile.cat.map((c) => (
+                            <div key={c._id} className="profile-cats-content">
+                                <img src={c.image} alt={`${c.name} cat`} />
+                                <div className="box-content">
                                     <Link to={`/cats/${c._id}`}>
                                         <h4>{c.name}</h4>
                                     </Link>
-                                    <img src={c.image} alt={`${c.name} cat`} />
-                                    <Link to={`/cats/${c._id}/update`}>
-                                        Edit Cat
-                                    </Link>
-                                    <button
-                                        onClick={() => handleCatDelete(c._id)}
-                                    >
-                                        Delete Cat
-                                    </button>
+                                    <div className="cats-btns">
+                                        <Link to={`/cats/${c._id}/update`}>
+                                            Edit Cat
+                                        </Link>
+                                        <button
+                                            onClick={() =>
+                                                handleCatDelete(c._id)
+                                            }
+                                        >
+                                            Delete Cat
+                                        </button>
+                                    </div>
                                 </div>
-                            ))}
-                        </ul>
+                            </div>
+                        ))}
                     </div>
                 ) : (
                     <p></p>
                 )}
-
+                <div className="underline"></div>
+                <h3>Your houses</h3>
                 {profile.house && profile.house.length > 0 ? (
-                    <div>
-                        <h3>Your houses</h3>
-                        <ul>
+                    <div className="profile-houses">
+                        <div>
                             {profile.house.map((home) => (
-                                <ul key={home._id}>
-                                    <Link to={`/homes/${home._id}`}>
-                                        <li>{home.name}</li>
-                                    </Link>
+                                <ul
+                                    key={home._id}
+                                    className="profile-houses-content"
+                                >
                                     <img
                                         src={home.photo}
                                         alt={`${home.name} house`}
                                     />
-                                    <Link to={`/homes/${home._id}/edit`}>
-                                        Edit House
-                                    </Link>
-                                    <button
-                                        onClick={() =>
-                                            handleHomeDelete(home._id)
-                                        }
-                                    >
-                                        Delete House
-                                    </button>
+                                    <div className="box-content">
+                                        <Link to={`/homes/${home._id}`}>
+                                            <h4>{home.name}</h4>
+                                        </Link>
+                                        <div className="houses-btns">
+                                            <Link
+                                                to={`/homes/${home._id}/edit`}
+                                            >
+                                                Edit House
+                                            </Link>
+                                            <button
+                                                onClick={() =>
+                                                    handleHomeDelete(home._id)
+                                                }
+                                            >
+                                                Delete House
+                                            </button>
+                                        </div>
+                                    </div>
                                 </ul>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 ) : (
                     <p></p>
                 )}
-
+                <h3>Your articles</h3>
                 {profile.articles && profile.articles.length > 0 ? (
-                    <div>
-                        <h3>Your articles</h3>
-                        <ul>
-                            {profile.articles.map((article) => (
-                                <>
-                                    <ul key={article._id}>
-                                        <li>{article.title}</li>
-                                    </ul>
-                                </>
-                            ))}
-                        </ul>
+                    <div className="profile-articles">
+                        {profile.articles.map((article) => (
+                            <>
+                                <div key={article._id}>
+                                    <p> 🐱 {article.title}</p>
+                                </div>
+                            </>
+                        ))}
                     </div>
                 ) : (
                     <p></p>
                 )}
-
+                <h3>Your comments</h3>
                 {profile.comments && profile.comments.length > 0 ? (
-                    <div>
-                        <h3>Your comments</h3>
-                        <ul>
-                            {profile.comments.map((c) => (
-                                <div key={c._id}>
-                                    <Link to={`/comment/info/${c._id}`}>
-                                        <p>{c.title}</p>
-                                        <p>{c.author}</p>
-                                    </Link>
-                                </div>
-                            ))}
-                        </ul>
+                    <div className="profile-comments">
+                        {profile.comments.map((c) => (
+                            <div
+                                key={c._id}
+                                className="profile-comments-content"
+                            >
+                                <Link to={`/comment/info/${c._id}`}>
+                                    <p> Title : {c.title}</p>
+                                    <p> User: {c.author}</p>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
                 ) : (
                     <p></p>
