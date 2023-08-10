@@ -86,7 +86,7 @@ useEffect(() => {
             
                 <div key={c._id}>
                 <Link to={`/cats/${c._id}`}>
-                <p >{c.name}</p>
+                <h4>{c.name}</h4>
                 </Link>
                 <img src={c.image} alt={`${c.name} cat`} />
                 <Link to={`/cats/${c._id}/update`}>Edit Cat</Link>
