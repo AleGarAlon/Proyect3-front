@@ -1,0 +1,22 @@
+nav {
+    margin: 20px;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    float: right;
+    padding: 10px;
+}
+li {
+    margin: 12px 40px;
+}
+li a {
+    color: #4c4c4c;
+    font-size: 1.8rem;
+    font-family: var(--heading-font-family);
+    text-decoration: none;
+}
+li a:hover {
+    color: var(--secondary-color);
+}
