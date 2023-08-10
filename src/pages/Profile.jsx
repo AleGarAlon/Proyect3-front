@@ -77,12 +77,16 @@ function Profile() {
             <div className="profile-actions">
                 <img src={profile.image} alt="profile image" />
                 <Link to="/cats/new">
-                    <button>Add a new cat for adoption</button>{" "}
+                    <button className="profile-btns">
+                        Add a new cat for adoption
+                    </button>{" "}
                 </Link>
-
                 <Link to="/homes/new">
                     <button className="profile-btns">Add a new home</button>{" "}
                 </Link>
+                <button onClick={handleLogout} className="profile-btns">
+                    Logout
+                </button>
             </div>
             <div className="profile-information">
                 <h2>Hey {profile.name}!</h2>
@@ -112,76 +116,73 @@ function Profile() {
                 ) : (
                     <p></p>
                 )}
-            </div>
 
-            {profile.house && profile.house.length > 0 ? (
-                <div>
-                    <h3>Your houses</h3>
-                    <ul>
-                        {profile.house.map((home) => (
-                            <ul key={home._id}>
-                                <Link to={`/homes/${home._id}`}>
-                                    <li>{home.name}</li>
-                                </Link>
-                                <img
-                                    src={home.photo}
-                                    alt={`${home.name} house`}
-                                />
-                                <Link to={`/homes/${home._id}/edit`}>
-                                    Edit House
-                                </Link>
-                                <button
-                                    onClick={() => handleHomeDelete(home._id)}
-                                >
-                                    Delete House
-                                </button>
-                            </ul>
-                        ))}
-                    </ul>
-                </div>
-            ) : (
-                <p></p>
-            )}
-            <Link to="/homes/new">
-                <button>Add a new home</button>{" "}
-            </Link>
-
-            {profile.articles && profile.articles.length > 0 ? (
-                <div>
-                    <h3>Your articles</h3>
-                    <ul>
-                        {profile.articles.map((article) => (
-                            <>
-                                <ul key={article._id}>
-                                    <li>{article.title}</li>
+                {profile.house && profile.house.length > 0 ? (
+                    <div>
+                        <h3>Your houses</h3>
+                        <ul>
+                            {profile.house.map((home) => (
+                                <ul key={home._id}>
+                                    <Link to={`/homes/${home._id}`}>
+                                        <li>{home.name}</li>
+                                    </Link>
+                                    <img
+                                        src={home.photo}
+                                        alt={`${home.name} house`}
+                                    />
+                                    <Link to={`/homes/${home._id}/edit`}>
+                                        Edit House
+                                    </Link>
+                                    <button
+                                        onClick={() =>
+                                            handleHomeDelete(home._id)
+                                        }
+                                    >
+                                        Delete House
+                                    </button>
                                 </ul>
-                            </>
-                        ))}
-                    </ul>
-                </div>
-            ) : (
-                <p></p>
-            )}
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <p></p>
+                )}
 
-            {profile.comments && profile.comments.length > 0 ? (
-                <div>
-                    <h3>Your comments</h3>
-                    <ul>
-                        {profile.comments.map((c) => (
-                            <div key={c._id}>
-                                <Link to={`/comment/info/${c._id}`}>
-                                    <p>{c.title}</p>
-                                    <p>{c.author}</p>
-                                </Link>
-                            </div>
-                        ))}
-                    </ul>
-                </div>
-            ) : (
-                <p></p>
-            )}
+                {profile.articles && profile.articles.length > 0 ? (
+                    <div>
+                        <h3>Your articles</h3>
+                        <ul>
+                            {profile.articles.map((article) => (
+                                <>
+                                    <ul key={article._id}>
+                                        <li>{article.title}</li>
+                                    </ul>
+                                </>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <p></p>
+                )}
 
-            <button onClick={handleLogout}>Logout</button>
+                {profile.comments && profile.comments.length > 0 ? (
+                    <div>
+                        <h3>Your comments</h3>
+                        <ul>
+                            {profile.comments.map((c) => (
+                                <div key={c._id}>
+                                    <Link to={`/comment/info/${c._id}`}>
+                                        <p>{c.title}</p>
+                                        <p>{c.author}</p>
+                                    </Link>
+                                </div>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <p></p>
+                )}
+            </div>
         </div>
     ) : (
         <h1>Wait... we have a furball...</h1>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { API_URL } from "../config/config.index";
 import "./allCatsPage.css";
-import StylingImage from "../Assets/styling-background.png";
+import StylingImage from "../assets/styling-background.png";
 
 const AllCatsPage = () => {
     //store data
