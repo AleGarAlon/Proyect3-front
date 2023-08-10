@@ -1,0 +1,37 @@
+.update-cat {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin: 25px 184px;
+    height: 130vh;
+    width: 1200px;
+    border: grey;
+}
+.update-cat h1 {
+    font-family: "Comfortaa", cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: #4c4c4c;
+    font-weight: 700;
+    line-height: 240px;
+}
+.update-cat input {
+    padding: 10px 23px;
+    border: none;
+}
+.update-cat form {
+    margin: 0 auto;
+    border: thick double #fe9e0d;
+}
+.update-cat-btn {
+    padding: 15px 23px;
+    background-color: #fe9e0d;
+    color: white;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border: none;
+}
+::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+}

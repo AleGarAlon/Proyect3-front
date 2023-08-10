@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../config/config.index";
 import { useParams, useNavigate } from "react-router-dom";
-
+import "./UpdateCatPage.css";
 
 function UpdateCatPage() {
     const navigate = useNavigate();
@@ -51,7 +51,7 @@ function UpdateCatPage() {
     };
 
     return (
-        <div>
+        <div className="update-cat">
             <h1> Update your Cat's Details</h1>
             <form onSubmit={handleSubmit}>
                 <input
@@ -78,7 +78,9 @@ function UpdateCatPage() {
                         setImage(e.target.value);
                     }}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="update-cat-btn">
+                    Submit
+                </button>
             </form>
         </div>
     );
