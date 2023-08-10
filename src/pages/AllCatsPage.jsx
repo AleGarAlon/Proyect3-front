@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { API_URL } from "../config/config.index";
-import "./allCatsPage.css";
+import "./AllCatsPage.css";
 import StylingImage from "../assets/styling-background.png";
 
 const AllCatsPage = () => {
