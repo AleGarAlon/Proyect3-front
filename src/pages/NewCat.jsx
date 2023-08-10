@@ -75,7 +75,9 @@ function NewCat() {
                         setImage(e.target.value);
                     }}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="new-cat-btn">
+                    Create
+                </button>
             </form>
         </div>
     );

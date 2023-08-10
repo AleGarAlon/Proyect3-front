@@ -15,3 +15,23 @@
     font-weight: 700;
     line-height: 240px;
 }
+.new-cat input {
+    padding: 10px 23px;
+    border: none;
+}
+.new-cat form {
+    margin: 0 auto;
+    border: thick double #fe9e0d;
+}
+.new-cat-btn {
+    padding: 15px 23px;
+    background-color: #fe9e0d;
+    color: white;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    border: none;
+}
+::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+}
