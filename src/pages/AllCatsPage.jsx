@@ -29,14 +29,14 @@ const AllCatsPage = () => {
             <h1> All Cats </h1>
             {cats.map((cat) => (
                 <div key={cat._id}>
+                    <Link to={`/cats/${cat._id}`}>
                     <img
                         src={cat.image}
                         alt={cat.name}
                         style={{ height: "200px" }}
                     />
-                    <Link to={`/cats/${cat._id}`}>
                         {" "}
-                        <h3> {cat.name}</h3>
+                        <h3>Name: {cat.name}</h3>
                     </Link>
                 </div>
             ))}
