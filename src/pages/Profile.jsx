@@ -88,7 +88,7 @@ useEffect(() => {
                 <Link to={`/cats/${c._id}`}>
                 <p >{c.name}</p>
                 </Link>
-                <p>{c.photo}</p>
+                <img src={c.image} alt={`${c.name} cat`} />
                 <Link to={`/cats/${c._id}/update`}>Edit Cat</Link>
                 <button onClick={() => handleCatDelete(c._id)}>Delete Cat</button>
                 </div>
@@ -111,7 +111,7 @@ useEffect(() => {
                     <Link to={`/homes/${home._id}`}>
                     <li >{home.name}</li>
                     </Link>
-                    <li>{home.photo}</li>
+                    <img src={home.photo} alt={`${home.name} house`} />
                     <Link to={`/homes/${home._id}/edit`}>Edit House</Link>
                     <button onClick={() => handleHomeDelete(home._id)}>Delete House</button>
                     </ul>
@@ -143,7 +143,7 @@ useEffect(() => {
         
          {profile.comments && profile.comments.length > 0 ? (
             <div>
-              <p>Your cats for adoption</p>
+              <p>Your comments</p>
               <ul>
                 {profile.comments.map((c) => (
                   <div key={c._id}>
