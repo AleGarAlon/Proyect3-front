@@ -34,7 +34,7 @@ function Profile() {
 
     const handleCatDelete = async (id) => {
         try {
-            const response = await fetch(`${API_URL}/cats/cats/${id}`, {
+            const response = await fetch(`${API_URL}/cats/${id}`, {
                 method: "DELETE",
             });
             if (response.status === 202) {

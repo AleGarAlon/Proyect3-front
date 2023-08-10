@@ -23,7 +23,7 @@ function NewCat() {
                 image,
                 Owner: userId, // Include the owner's ID in the payload
             };
-            const response = await fetch(`${API_URL}/cats/cats`, {
+            const response = await fetch(`${API_URL}/cats`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
