@@ -27,7 +27,7 @@ function UpdateCatPage() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`${API_URL}/cats/cats/${id}`, {
+            const response = await fetch(`${API_URL}/cats/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
