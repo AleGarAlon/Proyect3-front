@@ -51,13 +51,13 @@ function CatDetailsPage() {
                 </div>
                 <div className="cat-details">
                     <h3>
-                        Name <br></br> <p>{cat.name}</p>
+                        Name <p>{cat.name}</p>
                     </h3>
                     <h3>
-                        Description <br></br> <p> {cat.description}</p>
+                        Description <p> {cat.description}</p>
                     </h3>
                     <h3>
-                        Owner <br></br>{" "}
+                        Owner
                         <p>{cat.Owner ? cat.Owner.name : "Unknown"}</p>
                     </h3>
                     <button
