@@ -1,11 +1,11 @@
-.allCats h1 {
+.all-homes h1 {
     text-align: center;
     font-family: "Comfortaa", cursive;
     color: #4c4c4c;
     position: relative;
 }
 
-.cat-container {
+.home-container {
     margin-top: 5rem;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     gap: 13px;
 }
-.cat-card {
+.home-card {
     width: 300px;
     min-height: 350px;
     background-color: white;
@@ -27,23 +27,23 @@
     color: #505050;
     margin: 0rem 2rem;
 }
-.cat-card a {
+.home-card a {
     text-decoration: none;
-    color: #4c4c4c;
 }
-.cat-card h3 {
+.home-card h3 {
     font-family: "Comfortaa", cursive;
     color: #4c4c4c;
     margin-top: 25px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
-.cat-card p {
+.home-card p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
     margin-top: 45px;
     opacity: 0.6;
     line-height: 30px;
+	 color: #505050;
 }
 .styling-image-container {
     max-width: 600px;
