@@ -2,7 +2,7 @@
     display: flex;
     background: white;
     margin: 25px 184px;
-    height: 100vh;
+    height: 130vh;
     width: 1200px;
     border: grey;
 }
@@ -13,6 +13,11 @@
     flex-direction: column;
     margin: 120px 120px;
     gap: 20px;
+}
+.profile-actions img {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
 }
 .profile-btns {
     font-family: "Comfortaa", cursive;
@@ -43,4 +48,137 @@
     font-family: "Comfortaa", cursive;
     font-size: 2rem;
     color: #4c4c4c;
+}
+.profile-information h3 {
+    font-family: "Comfortaa", cursive;
+    font-size: 1.5rem;
+    color: #4c4c4c;
+}
+.underline {
+    width: 100px;
+    height: 5px;
+    background: #fe9e0d;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile-cats-content,
+.profile-houses-content,
+.profile-comments-content {
+    display: flex;
+}
+
+.profile-cats-content,
+.profile-houses-content h4 {
+    font-family: "Comfortaa", cursive;
+    font-size: 1.5rem;
+    color: #4c4c4c;
+}
+.profile-cats-content a {
+    text-decoration: none;
+}
+.profile-houses-content a {
+    text-decoration: none;
+}
+.profile-comments-content a {
+    text-decoration: none;
+}
+.profile-cats-content,
+.profile-houses-content img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+.cats-btns,
+.houses-btns {
+    display: flex;
+}
+.cats-btns a {
+    text-decoration: none;
+    font-family: "Comfortaa", cursive;
+    padding: 1rem 2rem;
+    background-color: white;
+    outline: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fe9e0d;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fe9e0d;
+    margin: 12px 12px;
+    font-size: 1rem;
+}
+.cats-btns button {
+    text-decoration: none;
+    font-family: "Comfortaa", cursive;
+    padding: 1rem 2rem;
+    background-color: white;
+    outline: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fe9e0d;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fe9e0d;
+    margin: 12px 12px;
+    font-size: 1rem;
+}
+.houses-btns a {
+    text-decoration: none;
+    font-family: "Comfortaa", cursive;
+    padding: 1rem 2rem;
+    background-color: white;
+    outline: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fe9e0d;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fe9e0d;
+    margin: 12px 12px;
+    font-size: 1rem;
+}
+.houses-btns button {
+    text-decoration: none;
+    font-family: "Comfortaa", cursive;
+    padding: 1rem 2rem;
+    background-color: white;
+    outline: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fe9e0d;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fe9e0d;
+    margin: 12px 12px;
+    font-size: 1rem;
+}
+.profile-articles ul {
+    display: flex;
+}
+.profile-articles p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin: 12px;
+}
+.profile-comments-content p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin: 12px;
+    color: #4c4c4c;
+}
+.box-content {
+    display: flex;
+    flex-direction: column;
 }
