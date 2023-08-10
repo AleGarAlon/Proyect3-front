@@ -31,7 +31,7 @@ function CommentDetails() {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`${API_URL}/comments/info/${id}`, {
+            const response = await fetch(`${API_URL}/comments/delete/${id}`, {
                 method: "DELETE",
             });
             if (response.status === 202) {
