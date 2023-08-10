@@ -17,6 +17,9 @@ import NewCat from "./pages/NewCat";
 import Articles from "./pages/Articles";
 import UpdateCatPage from "./pages/UpdateCatPage";
 import NewArticle from "./pages/NewArticle";
+import NewComment from "./pages/NewComment"
+import CommentDetails from "./pages/CommentDetail";
+
 
 function App() {
     return (
@@ -33,8 +36,21 @@ function App() {
                         <IsPrivate>
                             <NewArticle />
                         </IsPrivate>
-                    }
-                />
+                } />
+                 <Route
+                    path="/comment/:id"
+                    element={
+                        <IsPrivate>
+                            <NewComment />
+                        </IsPrivate>
+                } />
+                <Route
+                    path="/comment/info/:id"
+                    element={
+                        <IsPrivate>
+                            <CommentDetails />
+                        </IsPrivate>
+                } />
                 <Route
                     path="/profile"
                     element={

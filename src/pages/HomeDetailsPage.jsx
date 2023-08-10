@@ -23,7 +23,7 @@ const HomeDetailsPage = () => {
     fetchHome();
   }, [id]);
 
-  const handleDelete = async () => {
+  /*const handleDelete = async () => {
     try {
       const response = await fetch(`${API_URL}/api/homes/${id}`, {
         method: 'DELETE',
@@ -34,20 +34,19 @@ const HomeDetailsPage = () => {
     } catch (error) {
       console.error(error);
     }
-  };
+  };*/
 
   return isLoading ? (
-    <h1>Loading...</h1>
+    <h1>Wait... we have a furball...</h1>
   ) : home ? (
     <>
-      <h1>Shelter Details</h1>
+      <h1>Choose the purrfect house fur your cat</h1>
       <p>Owner: {home.Owner ? home.Owner.name : 'Unknown'}</p>
-      <p>{home.name}</p>
-      <p>{home.location}</p>
-      <p>{home.description}</p>
+      <p>House name: {home.name}</p>
+      <p>Location: {home.location}</p>
+      <p>Description: {home.description}</p>
       <img src={home.photo} alt="Home Photo" />
-      <button onClick={() => navigate(`/homes/${id}/edit`)}>Update</button>
-      <button onClick={handleDelete}>Delete</button>
+      <button onClick={() => navigate(`/comment/${home.Owner._id}`)}>Reach the owner</button>
     </>
   ) : (
     <h1>There was an error</h1>

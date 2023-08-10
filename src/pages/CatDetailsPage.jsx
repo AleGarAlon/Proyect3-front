@@ -15,7 +15,10 @@ function CatDetailsPage() {
             const response = await fetch(`${API_URL}/cats/cats/${id}`);
             if (response.status === 200) {
                 const parsedCat = await response.json();
+                console.log(parsedCat)
+                console.log(parsedCat.Owner._id)
                 setCat(parsedCat);
+                
             }
         } catch (error) {
             console.error(error);
@@ -26,7 +29,7 @@ function CatDetailsPage() {
         fetchCat();
     }, [id]);
 
-    const handleDelete = async () => {
+    /*const handleDelete = async () => {
         try {
             const response = await fetch(`${API_URL}/cats/cats/${id}`, {
                 method: "DELETE",
@@ -37,24 +40,22 @@ function CatDetailsPage() {
         } catch (error) {
             console.error(error);
         }
-    };
+    }; */
 
     // will be undefined, so we use Conditional (ternary)
     return cat ? (
         <div>
             <h1>Cat Details</h1>
-            <img src={cat.imageUrl} alt="Cat" />
+            <img src={cat.image} alt={cat.name} />
             <h3>Name: {cat.name}</h3>
             <p>Description: {cat.description}</p>
             <p>Owner: {cat.Owner ? cat.Owner.name : 'Unknown'}</p>
-            <button>Adopt me</button>
-            <button onClick={() => navigate(`/cats/${id}/update`)}>
-                Update
+            <button onClick={() => navigate(`/comment/${cat.Owner._id}`)}>
+                Reach the owner
             </button>
-            <button onClick={handleDelete}>Delete</button>
         </div>
     ) : (
-        <h1> Loading </h1>
+        <h1>Wait... we have a furball...</h1>
     );
 }
 
