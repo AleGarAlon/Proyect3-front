@@ -1,6 +1,7 @@
 import BannerBackground from "../assets/home-banner-background.png";
 import BannerImage from "../assets/home-banner-image.png";
 import "./Homepage.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
     return (
@@ -17,6 +18,9 @@ const HomePage = () => {
                         available cats, see our shelters, participate in our
                         forum, or view your profile.
                     </p>
+                    <Link to="/signup" className="intro-btn">
+                        Sign Up
+                    </Link>
                 </div>
                 <div className="home-image-section">
                     <img src={BannerImage} alt="" />

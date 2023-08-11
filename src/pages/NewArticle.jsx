@@ -54,7 +54,7 @@ const NewArticle = () => {
 
                 <textarea
                     value={information}
-                    placeholder="Description"
+                    placeholder=""
                     onChange={(e) => {
                         setInformation(e.target.value);
                     }}

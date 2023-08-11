@@ -1,5 +1,7 @@
 nav {
     margin: 20px;
+    display: flex;
+    gap: 353px;
 }
 ul {
     display: flex;
@@ -37,4 +39,15 @@ li a:hover {
 }
 .login:hover {
     background-color: rgb(234, 234, 234);
+}
+.logo img {
+    width: 140px;
+    margin: 0px 52px;
+}
+.nav-profile {
+    background-color: white;
+    padding: 0.8rem 1.7rem;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
 }
