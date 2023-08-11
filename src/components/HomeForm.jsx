@@ -32,7 +32,7 @@ const HomeForm = ({ onSubmit, home }) => {
                 />
                 <textarea
                     value={description}
-                    placeholder="Description"
+                    placeholder=""
                     onChange={(e) => {
                         setDescription(e.target.value);
                     }}
