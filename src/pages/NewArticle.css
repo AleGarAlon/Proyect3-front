@@ -20,11 +20,11 @@
     padding: 10px 23px;
     border: none;
 }
-.new-article textarea {
+/* .new-article textarea {
     padding: 10px 23px;
     border: none;
     line-height: 0px;
-}
+} */
 .new-article form {
     margin: 0 auto;
     border: thick double #fe9e0d;

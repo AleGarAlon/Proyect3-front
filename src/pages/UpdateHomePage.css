@@ -19,11 +19,11 @@
     padding: 10px 23px;
     border: none;
 }
-.update-shelter textarea {
+/* .update-shelter textarea {
     padding: 10px 23px;
     border: none;
     line-height: 0px;
-}
+} */
 .update-shelter form {
     margin: 0 auto;
     border: thick double #fe9e0d;
