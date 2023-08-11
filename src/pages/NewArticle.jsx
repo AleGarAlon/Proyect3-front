@@ -1,7 +1,8 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config/config.index";
 import { AuthContext } from "../context/Auth.context";
-import { useContext, useState} from 'react';
+import { useContext, useState } from "react";
+import "./NewArticle.css";
 
 const NewArticle = () => {
     const navigate = useNavigate();
@@ -13,7 +14,6 @@ const NewArticle = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        
 
         try {
             const response = await fetch(`${API_URL}/articles`, {
@@ -21,7 +21,7 @@ const NewArticle = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ title, information, author : userId}),
+                body: JSON.stringify({ title, information, author: userId }),
             });
             console.log(response);
             if (response.status === 201) {
@@ -37,33 +37,34 @@ const NewArticle = () => {
         } catch (error) {
             console.error(error);
         }
-    }
+    };
 
     return (
-        <>
-            <h1>New tail-tale</h1>
+        <div className="new-article">
+            <h1>Add a new tail-tale</h1>
             <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                value={title}
-                placeholder='Article title'
-                onChange={e => {
-                    setTitle(e.target.value);
-                }}
-            />
-            
-            <textarea
-                value={information}
-                placeholder=''
-                onChange={e => {
-                    setInformation(e.target.value);
-                }}
-            />
-           
-            <button type='submit'>Post</button>
-        </form>
-        </>
+                <input
+                    type="text"
+                    value={title}
+                    placeholder="Article title"
+                    onChange={(e) => {
+                        setTitle(e.target.value);
+                    }}
+                />
+
+                <textarea
+                    value={information}
+                    placeholder="Description"
+                    onChange={(e) => {
+                        setInformation(e.target.value);
+                    }}
+                />
+
+                <button type="submit" className="new-article-btn">
+                    Post
+                </button>
+            </form>
+        </div>
     );
-    
-}
+};
 export default NewArticle;
