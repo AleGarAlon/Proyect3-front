@@ -30,7 +30,7 @@ const Navbar = () => {
                         // These links will be shown if the user is authenticated
                         <>
                             <li>
-                                <Link to="/profile" className="nav-profile">
+                                <Link to="/profile" className="link-profile">
                                     Profile
                                 </Link>
                             </li>
@@ -41,12 +41,12 @@ const Navbar = () => {
                         <>
                             <li>
                                 <Link to="/signup" className="signup">
-                                    Sign Up
+                                    SignUp
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/login" className="login">
-                                    Log In
+                                    LogIn
                                 </Link>
                             </li>
                         </>

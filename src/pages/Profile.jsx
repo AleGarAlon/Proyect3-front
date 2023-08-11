@@ -183,8 +183,14 @@ function Profile() {
                                 className="profile-comments-content"
                             >
                                 <Link to={`/comment/info/${c._id}`}>
-                                    <p> Title : {c.title}</p>
-                                    <p> User: {c.author}</p>
+                                    <h3>
+                                        Title
+                                        <p>{c.title}</p>
+                                    </h3>
+                                    <h3>
+                                        User
+                                        <p>{c.author}</p>
+                                    </h3>
                                 </Link>
                             </div>
                         ))}

@@ -3,9 +3,10 @@
     flex-direction: column;
     background: white;
     margin: 25px 184px;
-    height: 130vh;
+    height: 70vh;
     width: 1200px;
     border: grey;
+    border-radius: 12px;
 }
 .new-shelter h1 {
     font-family: "Comfortaa", cursive;
