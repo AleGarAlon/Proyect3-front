@@ -1,7 +1,7 @@
 nav {
     margin: 20px;
     display: flex;
-    gap: 353px;
+    gap: 220px;
 }
 ul {
     display: flex;
@@ -24,7 +24,7 @@ li a:hover {
 }
 .signup,
 .login {
-    padding: 0.8rem 1.7rem;
+    padding: 16px 15px;
     background-color: white;
     outline: none;
     border: none;
@@ -44,9 +44,10 @@ li a:hover {
     width: 140px;
     margin: 0px 52px;
 }
-.nav-profile {
+.link-profile {
     background-color: white;
-    padding: 0.8rem 1.7rem;
+    padding: 16px 15px;
+
     outline: none;
     border: none;
     border-radius: 5rem;

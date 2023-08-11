@@ -2,11 +2,16 @@
     display: flex;
     background: white;
     margin: 25px 184px;
-    height: 130vh;
+    height: 150vh;
     width: 1200px;
     border: grey;
+    border-radius: 12px;
 }
-
+.profile-cats,
+.profile-houses {
+    border: 1px solid #4c4c4c;
+    border-radius: 20px;
+}
 .profile-actions,
 .profile-information {
     display: flex;
@@ -21,7 +26,6 @@
 }
 .profile-btns {
     font-family: "Comfortaa", cursive;
-    font-size: 1rem;
     padding: 1rem 2.5rem;
     background-color: #fe9e0d;
     outline: none;
@@ -35,6 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 277px;
 }
 .profile-btns:hover {
     background-color: white;
@@ -48,6 +53,7 @@
     font-family: "Comfortaa", cursive;
     font-size: 2rem;
     color: #4c4c4c;
+    margin-bottom: 40px;
 }
 .profile-information h3 {
     font-family: "Comfortaa", cursive;
@@ -67,6 +73,12 @@
     display: flex;
 }
 
+.profile-cats-content img {
+    border-radius: 12px;
+}
+.profile-houses-content img {
+    border-radius: 12px;
+}
 .profile-cats-content,
 .profile-houses-content h4 {
     font-family: "Comfortaa", cursive;
@@ -172,13 +184,27 @@
     font-size: 20px;
     margin: 12px;
 }
+.profile-comments {
+    background: #fe9e0d;
+    border-radius: 20px;
+}
+
 .profile-comments-content p {
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     margin: 12px;
     color: #4c4c4c;
 }
+.profile-comments-content h3 {
+    color: white;
+    margin: 11px 33px;
+}
+
 .box-content {
     display: flex;
     flex-direction: column;
+}
+.box-content h4 {
+    text-decoration: none;
+    color: #4c4c4c;
 }
